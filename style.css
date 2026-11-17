@@ -3,39 +3,40 @@
    CSS Stylesheet with Dark/Light Theme, Responsive Layout & Print Mode
    =================================================================== */
 
-/* CSS Variables for Dynamic Theming */
+/* CSS Variables for Dynamic Theming - Sunflower Theme */
 :root {
   --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* Light Theme Colors (Default) */
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
-  --bg-alt: #f1f5f9;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
+  /* Sunflower Light Theme (Golden Warm Daylight & Earthy Brown) */
+  --bg-primary: #fffdf5;              /* Gentle sunflower cream / warm ivory */
+  --bg-secondary: #ffffff;            /* Clean warm white */
+  --bg-alt: #fef9e7;                  /* Subtle golden morning sunlight */
+  --text-primary: #38200d;            /* Rich roasted sunflower seed espresso brown */
+  --text-secondary: #6e3d17;          /* Warm russet brown */
+  --text-muted: #8c5825;              /* Soft earthy brown */
   
-  --accent-primary: #4f46e5;
-  --accent-hover: #4338ca;
-  --accent-light: #e0e7ff;
-  --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-  
-  --card-bg: #ffffff;
-  --card-border: #e2e8f0;
-  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-  
-  --header-bg: rgba(255, 255, 255, 0.85);
-  --header-border: rgba(226, 232, 240, 0.8);
-  
-  --timeline-line: #cbd5e1;
-  --tag-bg: #eef2ff;
-  --tag-text: #4338ca;
+  --accent-primary: #d97706;          /* Vibrant sunflower amber gold */
+  --accent-hover: #b45309;            /* Deep golden bronze */
+  --accent-light: #fef3c7;            /* Bright soft petal yellow */
+  --accent-gradient: linear-gradient(135deg, #b45309 0%, #d97706 40%, #eab308 100%);
+  --accent-shadow: rgba(217, 119, 6, 0.28);
 
-  --success-bg: #dcfce7;
-  --success-text: #15803d;
-  --error-text: #dc2626;
+  --card-bg: #ffffff;
+  --card-border: #fde68a;             /* Warm golden border */
+  --card-shadow: 0 4px 6px -1px rgba(78, 42, 10, 0.05), 0 2px 4px -2px rgba(78, 42, 10, 0.04);
+  --card-shadow-hover: 0 20px 25px -5px rgba(217, 119, 6, 0.14), 0 8px 10px -6px rgba(78, 42, 10, 0.06);
+  
+  --header-bg: rgba(255, 253, 245, 0.9);
+  --header-border: rgba(253, 230, 138, 0.8);
+  
+  --timeline-line: #fcd34d;           /* Bright sunflower yellow spine */
+  --tag-bg: #fef3c7;                  /* Petal yellow tag */
+  --tag-text: #92400e;                /* Deep amber brown text */
+
+  --success-bg: #fef9c3;
+  --success-text: #854d0e;
+  --error-text: #b91c1c;
 
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -46,34 +47,35 @@
   --transition-normal: 0.3s ease;
 }
 
-/* Dark Theme Overrides */
+/* Sunflower Dark Theme (Velvety Dark Chocolate Soil & Luminous Golden Petals) */
 [data-theme="dark"] {
-  --bg-primary: #0b0f19;
-  --bg-secondary: #111827;
-  --bg-alt: #0f172a;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
+  --bg-primary: #170e06;              /* Deep dark chocolate soil */
+  --bg-secondary: #221509;            /* Dark roasted cacao brown */
+  --bg-alt: #1c1107;                  /* Warm deep woody earth */
+  --text-primary: #fefce8;            /* Radiant soft buttercream */
+  --text-secondary: #fef08a;          /* Soft luminous sunflower yellow */
+  --text-muted: #d4af37;              /* Muted golden amber */
   
-  --accent-primary: #6366f1;
-  --accent-hover: #818cf8;
-  --accent-light: rgba(99, 102, 241, 0.15);
-  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  --accent-primary: #f59e0b;          /* Bright sunflower golden amber */
+  --accent-hover: #fbbf24;            /* Gleaming sunbeam gold */
+  --accent-light: rgba(245, 158, 11, 0.16);
+  --accent-gradient: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%);
+  --accent-shadow: rgba(245, 158, 11, 0.35);
   
-  --card-bg: #1e293b;
-  --card-border: #334155;
-  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+  --card-bg: #26170b;                 /* Roasted brown card */
+  --card-border: #4d3319;             /* Warm dark earth border */
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --card-shadow-hover: 0 20px 25px -5px rgba(245, 158, 11, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
   
-  --header-bg: rgba(15, 23, 42, 0.85);
-  --header-border: rgba(51, 65, 85, 0.7);
+  --header-bg: rgba(23, 14, 6, 0.9);
+  --header-border: rgba(77, 51, 25, 0.8);
   
-  --timeline-line: #334155;
-  --tag-bg: rgba(99, 102, 241, 0.2);
-  --tag-text: #c7d2fe;
+  --timeline-line: #6b441f;
+  --tag-bg: rgba(245, 158, 11, 0.18);
+  --tag-text: #fef08a;
 
-  --success-bg: #064e3b;
-  --success-text: #6ee7b7;
+  --success-bg: #372107;
+  --success-text: #fef08a;
 }
 
 /* Base Reset & Core Styles */
@@ -184,13 +186,14 @@ body {
 .btn-primary {
   background: var(--accent-gradient);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+  text-shadow: 0 1px 2px rgba(56, 32, 13, 0.4);
+  box-shadow: 0 4px 14px var(--accent-shadow);
 }
 
 .btn-primary:hover {
   opacity: 0.95;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.45);
+  box-shadow: 0 6px 20px var(--accent-shadow);
 }
 
 .btn-secondary {
@@ -381,7 +384,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 12px 28px rgba(79, 70, 229, 0.25);
+  box-shadow: 0 12px 28px var(--accent-shadow);
 }
 
 .profile-img {
@@ -726,10 +729,15 @@ a.contact-chip:hover {
   font-size: 1.25rem;
 }
 
-.cat-frontend { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
-.cat-backend  { background: rgba(16, 185, 129, 0.15); color: #10b981; }
-.cat-db       { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
-.cat-tools    { background: rgba(139, 92, 246, 0.15); color: #8b5cf6; }
+.cat-frontend { background: rgba(234, 179, 8, 0.2); color: #b45309; }
+.cat-backend  { background: rgba(120, 53, 15, 0.15); color: #78350f; }
+.cat-db       { background: rgba(245, 158, 11, 0.2); color: #d97706; }
+.cat-tools    { background: rgba(146, 64, 14, 0.15); color: #92400e; }
+
+[data-theme="dark"] .cat-frontend { background: rgba(251, 191, 36, 0.18); color: #fbbf24; }
+[data-theme="dark"] .cat-backend  { background: rgba(245, 158, 11, 0.18); color: #f59e0b; }
+[data-theme="dark"] .cat-db       { background: rgba(253, 224, 71, 0.18); color: #fde047; }
+[data-theme="dark"] .cat-tools    { background: rgba(217, 119, 6, 0.18); color: #fcd34d; }
 
 .category-header h3 {
   font-size: 1.15rem;
@@ -1169,7 +1177,7 @@ a.contact-chip:hover {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 12px var(--accent-shadow);
   transition: transform var(--transition-fast);
 }
 
