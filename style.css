@@ -639,6 +639,55 @@ a.contact-chip:hover {
   line-height: 1.6;
 }
 
+.timeline-focus {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.timeline-focus strong {
+  color: var(--accent-primary);
+}
+
+.coursework-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.cw-tag {
+  font-size: 0.76rem;
+  font-family: var(--font-mono);
+  background-color: var(--bg-alt);
+  color: var(--text-secondary);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--card-border);
+}
+
+.education-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--card-border);
+}
+
+.education-highlights li {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.education-highlights li i {
+  color: #10b981;
+  font-size: 0.75rem;
+}
+
 /* ===================================================================
    Technical Skills
    =================================================================== */
