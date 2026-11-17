@@ -612,6 +612,13 @@ a.contact-chip:hover {
   border-radius: var(--radius-full);
 }
 
+.grade-badge {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
 .timeline-degree {
   font-size: 1.25rem;
   font-weight: 700;
