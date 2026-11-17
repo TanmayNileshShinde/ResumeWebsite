@@ -1,16 +1,4 @@
-/**
- * Experiment 11: Web-Based Resume
- * JavaScript for Interactive Features:
- * - Dark / Light Mode Toggle with LocalStorage persistence
- * - Mobile Navigation Menu Drawer
- * - Smooth Scrolling & Active Section Highlighting
- * - Download / Print Resume Action
- * - Client-Side Contact Form Validation with Toast Alerts
- * - Back to Top visibility on scroll
- */
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Elements
   const themeToggle = document.getElementById('themeToggle');
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
@@ -21,14 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const backToTop = document.getElementById('backToTop');
   const currentYearSpan = document.getElementById('currentYear');
 
-  // Set Current Year in Footer
   if (currentYearSpan) {
     currentYearSpan.textContent = new Date().getFullYear();
   }
 
-  /* ===================================================================
-     1. Dark / Light Theme Toggle
-     =================================================================== */
   const THEME_KEY = 'resume_theme';
 
   const applyTheme = (theme) => {
@@ -41,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Determine initial theme: saved preference -> system preference -> light default
   const savedTheme = localStorage.getItem(THEME_KEY);
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
@@ -56,9 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ===================================================================
-     2. Mobile Hamburger Navigation
-     =================================================================== */
   if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('open');
@@ -66,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
       menuToggle.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close menu when clicking any nav link
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
@@ -74,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Close menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('open')) {
         navMenu.classList.remove('open');
@@ -83,9 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ===================================================================
-     3. Active Section Highlighting on Scroll
-     =================================================================== */
   const sections = document.querySelectorAll('section[id]');
 
   const handleActiveNavOnScroll = () => {
@@ -106,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Back to top button visibility
     if (backToTop) {
       if (scrollY > 300) {
         backToTop.style.opacity = '1';
@@ -119,21 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('scroll', handleActiveNavOnScroll);
-  handleActiveNavOnScroll(); // Initial check
+  handleActiveNavOnScroll();
 
-  /* ===================================================================
-     4. Download / Print Resume Action
-     =================================================================== */
   if (downloadBtn) {
     downloadBtn.addEventListener('click', () => {
-      // Trigger the browser's native print preview formatted by @media print stylesheet
       window.print();
     });
   }
 
-  /* ===================================================================
-     5. Interactive Contact Form Validation
-     =================================================================== */
   if (contactForm) {
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
@@ -156,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
       messageError.textContent = '';
     };
 
-    // Clear individual error on input
     [nameInput, emailInput, subjectInput, messageInput].forEach((input) => {
       if (input) {
         input.addEventListener('input', () => {
@@ -171,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let isValid = true;
 
-      // Validate Name
       if (!nameInput.value.trim()) {
         nameError.textContent = 'Please enter your name.';
         isValid = false;
@@ -180,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
         isValid = false;
       }
 
-      // Validate Email
       if (!emailInput.value.trim()) {
         emailError.textContent = 'Please enter your email address.';
         isValid = false;
@@ -189,13 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
         isValid = false;
       }
 
-      // Validate Subject
       if (!subjectInput.value.trim()) {
         subjectError.textContent = 'Please enter a subject.';
         isValid = false;
       }
 
-      // Validate Message
       if (!messageInput.value.trim()) {
         messageError.textContent = 'Please enter your message.';
         isValid = false;
@@ -205,16 +167,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (isValid) {
-        // Show success toast
         if (formSuccessToast) {
           formSuccessToast.classList.remove('hidden');
           formSuccessToast.style.opacity = '1';
         }
 
-        // Reset form fields
         contactForm.reset();
 
-        // Auto-hide toast after 4 seconds
         setTimeout(() => {
           if (formSuccessToast) {
             formSuccessToast.style.opacity = '0';
